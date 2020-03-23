@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+ <html>
+ <body>
+<button onclick="myFunction()">click to start</button>
+<script>
+function myFunction() {
+var position = prompt("enter the Position" , "");
+ if(position.charCodeAt(1)<=56&&position.charCodeAt(1)>=49&&position.charCodeAt(0)<=97&&position.charCodeAt(1)<=105)
+ while(1==1)
+  {
+  var expression = prompt("enter the Direction","S");
+  var jump = prompt("enter no of steps","");
+ 
+
+switch(expression) {
+  case "N":
+    if((position.charCodeAt(1)+jump)<=56)
+    position=position.replace(String.fromCharCode(position.charCodeAt(1)),String.fromCharCode(position.charCodeAt(1)+jump));
+      else
+    document.write("Invalid");
+    break;
+  case "S":
+    if((position.charCodeAt(1)-jump)>=49)
+        position=position.replace(String.fromCharCode(position.charCodeAt(1)),String.fromCharCode(position.charCodeAt(1)-jump));
+
+      else
+    document.write("Invalid");
+    break;
+    case "E":
+    if((position.charCodeAt(0)+jump)<=105)
+        position=position.replace(String.fromCharCode(position.charCodeAt(0)),String.fromCharCode(position.charCodeAt(0)+jump));
+      else
+    document.write("Invalid");
+    break;
+    case "W":
+    if((position.charCodeAt(0)-jump)>=97)
+     position=position.replace(String.fromCharCode(position.charCodeAt(0)),String.fromCharCode(position.charCodeAt(0)-jump));
+      else
+    document.write("Invalid");
+    break;
+    case "NE":
+    if((position.charCodeAt(1)+jump)<=56&&(position.charCodeAt(0)+jump)<=105){
+   position=position.replace(String.fromCharCode(position.charCodeAt(1)),String.fromCharCode(position.charCodeAt(1)+jump));
+   position=position.replace(String.fromCharCode(position.charCodeAt(0)),String.fromCharCode(position.charCodeAt(0)+jump));
+    }
+      else
+    document.write("Invalid");
+    break;
+    case "NW":
+    if(((position.charCodeAt(1)+jump)<=56&&(position.charCodeAt(0)-jump)>=97)){
+   position=position.replace(String.fromCharCode(position.charCodeAt(1)),String.fromCharCode(position.charCodeAt(1)+jump));
+        position=position.replace(String.fromCharCode(position.charCodeAt(0)),String.fromCharCode(position.charCodeAt(0)-jump));
+    }  else
+    document.write("Invalid");
+    break;
+    case "SE":
+    if((position.charCodeAt(1)-jump)>=49&&(position.charCodeAt(0)+jump)<=105){
+           position=position.replace(String.fromCharCode(position.charCodeAt(1)),String.fromCharCode(position.charCodeAt(1)-jump));
+             position=position.replace(String.fromCharCode(position.charCodeAt(0)),String.fromCharCode(position.charCodeAt(0)+jump));
+
+    }
+    else
+    document.write("Invalid");
+    break;
+    case "SW":
+    if((position.charCodeAt(1)-jump)>=49&&(position.charCodeAt(0)-jump)>=97){
+    position=position.replace(String.fromCharCode(position.charCodeAt(1)),String.fromCharCode(position.charCodeAt(1)-jump));
+    position=position.replace(String.fromCharCode(position.charCodeAt(0)),String.fromCharCode(position.charCodeAt(0)-jump));
+    }
+    else
+    document.write("Invalid");
+    break;
+  
+}
+document.write(position);
+document.write("\n");
+var exit = prompt("Do you want to exit(y/n)?","");
+if(exit==y)
+break;
+}
+else
+document.write("Inavlid");
+}
+</script>
+
+</body>
+</html>
